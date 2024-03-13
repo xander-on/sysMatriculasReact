@@ -35,6 +35,10 @@ export const systemAlumnos = createSlice({
       state.matriculas.push(action.payload);
     },
 
+    addMateria(state, action) {
+      state.materias.push(action.payload);
+    },
+
     
   }
 });
@@ -42,5 +46,7 @@ export const systemAlumnos = createSlice({
 export const { 
   setCarreras,
   setMatriculas,
+  setMaterias,
   addMatricula,
+  addMateria
 } = systemAlumnos.actions;

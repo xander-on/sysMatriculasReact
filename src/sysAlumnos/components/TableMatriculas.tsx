@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useAppSelector } from '../../store';
 
 export const TableMatriculas = () => {
@@ -20,6 +21,15 @@ export const TableMatriculas = () => {
               <td>{matricula.id}</td>
               <td>{ matricula.nombre } { matricula.apellidos }</td>
               <td>{ matricula.carrera.nombre }</td>
+              <td>
+                <Link
+                  className="btn btn-primary"
+                  // onClick={ () => {} }
+                  to={`/matriculas/${matricula.id}`}
+                >
+                  Ver mas
+                </Link>
+              </td>
             </tr>
           ))
         }

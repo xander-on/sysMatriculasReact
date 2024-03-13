@@ -1,5 +1,12 @@
 import { Route, Routes } from "react-router-dom"
-import { HomePage, MatriculasAddPage, MatriculasListPage } from "../pages"
+import { 
+  HomePage, 
+  // MateriasAddPage, 
+  MateriasListPage, 
+  MatriculaDetailsPage, 
+  MatriculasAddPage, 
+  MatriculasListPage 
+} from "../pages"
 
 export const SystemRoutes = () => {
   return (
@@ -8,6 +15,10 @@ export const SystemRoutes = () => {
       <Route path=""               element={<HomePage />} />
       <Route path="matriculas"     element={<MatriculasListPage />} />
       <Route path="matriculas/add" element={<MatriculasAddPage />} />
+      <Route path="matriculas/:id" element={<MatriculaDetailsPage />} />
+
+      <Route path="materias"     element={<MateriasListPage />} />
+      {/* <Route path="materias/add" element={<MateriasAddPage />} /> */}
     </Routes>
   )
 }

@@ -1,6 +1,6 @@
 import { Dispatch } from "@reduxjs/toolkit";
-import { addMatricula, setCarreras, setMatriculas } from ".";
-import { MatriculaForm } from "../../sysAlumnos/interfaces";
+import { addMateria, addMatricula, setCarreras, setMaterias, setMatriculas } from ".";
+import { Materia, MatriculaForm } from "../../sysAlumnos/interfaces";
 
 
 export const getCarreras = () => {
@@ -20,6 +20,15 @@ export const getMatriculas = () => {
 }
 
 
+export const getMaterias = () => {
+  return async ( dispatch:Dispatch ) => {
+    const response = await fetch('http://localhost:8080/materias');
+    const data = await response.json();
+    dispatch( setMaterias(data) );  
+  }
+}
+
+
 export const postMatricula = ( matricula:MatriculaForm ) => {
   return async ( dispatch:Dispatch ) => {
     const response = await fetch('http://localhost:8080/matriculas', {
@@ -29,6 +38,19 @@ export const postMatricula = ( matricula:MatriculaForm ) => {
     });
     const newMatricula = await response.json();
     dispatch( addMatricula( newMatricula ) );
+  }
+}
+
+
+export const postMateria = ( materia:Materia ) => {
+  return async ( dispatch:Dispatch ) => {
+    const response = await fetch('http://localhost:8080/materias', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(materia)
+    });
+    const newMateria = await response.json();
+    dispatch( addMateria( newMateria ) );
   }
 }
 
