@@ -19,7 +19,7 @@ export const MatriculasListPage = () => {
           <div className="d-flex justify-content-between mx-3">
             <h2>Listado de Alumnos Matriculados</h2>
             <Link 
-              className="btn btn-primary"
+              className="btn btn-success"
               to={"/matriculas/add"}
             >
                 Agregar Alumno

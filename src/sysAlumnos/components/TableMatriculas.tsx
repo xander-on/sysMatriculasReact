@@ -8,7 +8,7 @@ export const TableMatriculas = () => {
     <table className="table">
       <thead>
         <tr>
-          <th>Id</th>
+          <th>Id. Matricula</th>
           <th>Nombre</th>
           <th>Carrera</th>
           <th>Acciones</th>
@@ -23,7 +23,7 @@ export const TableMatriculas = () => {
               <td>{ matricula.carrera.nombre }</td>
               <td>
                 <Link
-                  className="btn btn-primary"
+                  className="btn btn-outline-primary"
                   // onClick={ () => {} }
                   to={`/matriculas/${matricula.id}`}
                 >

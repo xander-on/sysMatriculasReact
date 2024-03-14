@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom"
 
 
-
-
 export const HomePage = () => {
   return (
 
-    <div className="container my-5">
-
+    <div className="">
       <Link to={"/matriculas"} className="text-decoration-none">
         <div className="card text-white bg-success mb-3" style={{maxWidth: '18rem'}}>
           <div className="card-header">
@@ -29,8 +26,6 @@ export const HomePage = () => {
           </div>
         </div>
       </Link>
-
-
       
     </div>
   )
